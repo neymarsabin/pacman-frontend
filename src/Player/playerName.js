@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
+import { connect } from 'react-redux'
 
 class PlayerName extends Component {
   constructor(props) {
@@ -35,14 +36,22 @@ class PlayerName extends Component {
 
   render() {
     const playerName = this.state.pname
+    const score = this.props.score.score
     return(
       <Paper>
         <h1>Please enter your name</h1>
         <input name="pname" type="text" value={playerName} onChange={this.handleChange}/>
         <Button onClick={this.handleSubmit}> Submit Name </Button>
+        Total Score: {score}
       </Paper>
     )
   }
 }
 
-export default PlayerName
+const mapStateToProps = (state) => {
+  debugger
+  const { score, player } = state
+  return { score, player }
+}
+
+export default connect(mapStateToProps)(PlayerName)

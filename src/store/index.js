@@ -1,9 +1,10 @@
 import { createStore } from 'redux'
-import { playerReducer } from '../reducers/player_reducer.js'
+import { playerReducer, scoreReducer } from '../reducers/player_reducer.js'
 import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
-  player: playerReducer
+  player: playerReducer,
+  score: scoreReducer
 })
 
 export const store = createStore(

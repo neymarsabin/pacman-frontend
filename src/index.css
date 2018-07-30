@@ -1,27 +1,30 @@
 body {
-  margin: 0;
-  padding: 0;
   font-family: sans-serif;
 }
 
 .world-boundary {
   border: 1px solid red;
-  height: 600px;
-  width: 1200px;
-  right: 20px;
+  height: 700px;
+  width: 700px;
 }
 
 .tile {
+  height: 60px;
+  width: 70px;
   display: inline-flex;
+  background-color: white;
 }
 
 .wall {
+  height: 60px;
+  width: 70px;
   background-image: url('./wall-sprites-pacman.png');
 }
 
-.food {
-  background-image: url('./pacman-food.jpg');
-  background-color: black;
+.tile.food {
+  background-image: url('./pacman-cherry.png');
+  height: 60px;
+  width: 70px;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
 }
-
-

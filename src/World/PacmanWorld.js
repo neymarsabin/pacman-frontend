@@ -8,9 +8,8 @@ class PacmanWorld extends Component {
     return(
         <div style={{
           position: 'relative',
-          width: '700px',
-          height: '700px',
-          margin: '20px auto'
+          width: '70px',
+          height: '70px'
       }}>
         <Map foods={Foods}/>
         <PlayerMovement />
