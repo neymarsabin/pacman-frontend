@@ -21,7 +21,6 @@ class playerMovement extends Component {
 }
 
 function mapStateToProps(state){
-  debugger
   return {
     ...state.player
   }
