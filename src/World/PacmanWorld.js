@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PlayerMovement from '../Player/playerMovement.js'
 import Map from '../Map/map.js'
+import { Foods } from '../Map/Food'
 
 class PacmanWorld extends Component {
   render(){
@@ -11,7 +12,7 @@ class PacmanWorld extends Component {
           height: '700px',
           margin: '20px auto'
       }}>
-        <Map />
+        <Map foods={Foods}/>
         <PlayerMovement />
       </div>
     )

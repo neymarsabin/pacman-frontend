@@ -10,3 +10,18 @@ body {
   width: 1200px;
   right: 20px;
 }
+
+.tile {
+  display: inline-flex;
+}
+
+.wall {
+  background-image: url('./wall-sprites-pacman.png');
+}
+
+.food {
+  background-image: url('./pacman-food.jpg');
+  background-color: black;
+}
+
+
