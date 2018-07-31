@@ -39,20 +39,32 @@ export function MapRow(props) {
   )
 }
 
-export default function Map(props) {
-  return(
-    <div>
-      <Paper style={{
-        position: 'relative',
-        height: '700px',
-        width: '700px',
-        backgroundColor: 'black',
-        margin: '10px auto',
-      }}>
+class Map extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  /* componentWillReceiveProps(nextProps, nextState) {
+   *   this.
+   * } */
+
+  render() {
+    return(
+      <div>
+        <Paper style={{
+          position: 'relative',
+          height: '700px',
+          width: '700px',
+          backgroundColor: 'black',
+          margin: '10px auto',
+        }}>
         {
-          props.foods.map( row => <MapRow foods={row} /> )
+          this.props.foods.map( row => <MapRow foods={row} /> )
         }
       </Paper>
     </div>
   )
+ }
 }
+
+export default Map

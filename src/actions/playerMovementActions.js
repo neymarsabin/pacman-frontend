@@ -32,7 +32,7 @@ export default function handleMovement(player) {
   function directionMove(direction) {
     const oldPos = store.getState().player.position
     let canMove = handleCollision(direction) === 1 ? false : true
-    let isFood = eatFood(direction) === 2 ? true : false
+    let isFood = handleCollision(direction) === 2 ? true : false
     eatFood(isFood, direction)
     if (canMove) {
       store.dispatch({
@@ -53,15 +53,15 @@ export default function handleMovement(player) {
 
   function eatFood(isFood, direction) {
     let currentScore = store.getState().score.score
-    let newPos = getNewPosition(direction)
-    return Foods[newPos[0]/70][newPos[1]/70]
-    if(isFood && (Foods[newPos[0]/70][newPos[1]/70]) == 2) {
+    let newPosition = getNewPosition(direction)
+    if(isFood) {
       store.dispatch({
         type: 'INCREASE_SCORE',
         payload: currentScore + 5
       })
+      Foods[newPosition[0]/70][newPosition[1]/70] = 0
     }
-    return Foods[newPos[0]/70][newPos[1]/70]
+
   }
 
 
