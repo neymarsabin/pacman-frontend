@@ -1,0 +1,13 @@
+image: node:6
+
+pages:
+  script:
+    - npm install
+    - npm run build
+    - mkdir public
+    - ./node_modules/.bin/copyfiles -u 1 "dist/**/*" public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
