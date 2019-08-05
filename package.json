@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^1.4.0",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-game-kit": "^1.0.6",
